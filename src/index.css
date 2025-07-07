@@ -8,7 +8,13 @@
   --body-font: "Roboto", sans-serif;
 }
 
-body {
-  background: var(--background-colour);
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
 }

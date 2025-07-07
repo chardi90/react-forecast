@@ -1,19 +1,10 @@
 .Header {
-  background: #005792;
+  background: var(--background-colour);
   border: none;
   border-radius: 6px;
   margin: 0 auto;
-  margin-top: 12px;
   max-width: 600px;
-  padding: 10px 25px 10px;
-}
-
-.Header form {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  margin-left: auto;
-  width: auto;
+  padding: 10px 10px;
 }
 
 .Header .search-input,
@@ -28,8 +19,7 @@
 
 .Header .search-input {
   background-color: #fff;
-  width: 40%;
-  min-width: 150px;
+  min-width: 280px;
 }
 
 .Header ::placeholder {
@@ -41,14 +31,26 @@
   background-color: var(--accent-colour);
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin-left: 10px;
   min-width: 100px;
   transition: all 200ms ease-in-out;
-  width: 20%;
 }
 
 .Header .search-button:hover {
   background-color: var(--underline-colour);
   cursor: pointer;
+  color: var(--dark-colour);
+}
+
+.Header .btn-units {
+  background: var(--accent-colour);
+  color: var(--background-colour);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.Header .btn-units:hover {
+  background: var(--underline-colour);
   color: var(--dark-colour);
 }

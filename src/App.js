@@ -5,7 +5,7 @@ import Weather from "./Weather";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <header className="App-header">
         <Header />
       </header>
