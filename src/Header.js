@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 
 export default function Header({ city, setCity }) {
-  function updateCity(event) {
-    setCity(event.target.value);
+  const [inputValue, setInputValue] = useState(city);
+
+  useEffect(() => {
+    setInputValue(city);
+  }, [city]);
+
+  function updateCityInput(event) {
+    setInputValue(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+    setCity(inputValue);
   }
 
   return (
@@ -29,8 +36,8 @@ export default function Header({ city, setCity }) {
               placeholder="Enter a city..."
               className="search-input"
               autoFocus="on"
-              value={city}
-              onChange={updateCity}
+              value={inputValue}
+              onChange={updateCityInput}
             />
             <input type="submit" value="Search" className="search-button" />
           </form>

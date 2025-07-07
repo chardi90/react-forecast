@@ -13,7 +13,7 @@ export default function App() {
         <Header city={city} setCity={setCity} />
       </header>
       <section>
-        <Weather city={city} />
+        <Weather city={city} setCity={setCity} />
       </section>
       <footer>
         <Footer />

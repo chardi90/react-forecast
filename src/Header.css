@@ -43,7 +43,7 @@
 }
 
 .Header .btn-units {
-  background: var(--accent-colour);
+  background: var(--muted-background-colour);
   color: var(--background-colour);
   font-size: 12px;
   font-weight: bold;
@@ -51,6 +51,6 @@
 }
 
 .Header .btn-units:hover {
-  background: var(--underline-colour);
+  background: var(--accent-colour);
   color: var(--dark-colour);
 }
