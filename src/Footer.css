@@ -1,26 +1,26 @@
-a {
-  color: #00bbf0;
-  text-decoration: none;
-}
-
-footer {
+.Footer {
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  text-align: center;
-  font-weight: bold;
   margin: 20px auto;
   max-width: 600px;
   padding: 10px 20px;
 }
 
-a:hover {
-  color: #fdb44b;
-  text-decoration: underline;
+.Footer p {
+  color: var(--dark-colour);
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
 }
 
-p {
-  color: var(--dark-colour);
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-style: normal;
+.Footer a {
+  color: var(--underline-colour);
+  text-decoration: none;
+}
+
+.Footer a:hover {
+  color: var(--accent-colour);
+  text-decoration: underline;
 }
