@@ -5,13 +5,17 @@ export default function Footer() {
   return (
     <footer className="footer">
       Coded by
-      <a href="https://github.com/chardi90" target="_blank" rel="noreferrer">
+      <a
+        href="https://chardi-portfolio.netlify.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
         {" "}
         Clare Harding
       </a>
       , open-sourced on
       <a
-        href="https://github.com/chardi90/weather"
+        href="https://github.com/chardi90/react-forecast"
         target="_blank"
         rel="noreferrer"
       >
@@ -20,7 +24,7 @@ export default function Footer() {
       </a>
       , and
       <a
-        href="https://the-weather-in.netlify.app/"
+        href="https://forecast-on-react.netlify.app/"
         target="_blank"
         rel="noreferrer"
       >
