@@ -3,17 +3,17 @@ import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="box">
+    <div className="Header">
       <form>
         <input
           type="search"
           name="search-input"
-          placeholder="Type a city..."
+          placeholder="Enter a city..."
           className="search-input"
-          autoComplete="off"
+          autoFocus="on"
         />
         <input type="submit" value="Search" className="search-button" />
       </form>
-    </header>
+    </div>
   );
 }

@@ -1,0 +1,14 @@
+:root {
+  --accent-colour: #fdb44b;
+  --background-colour: #005792;
+  --muted-background-colour: #d6e4f0;
+  --underline-colour: #00bbf0;
+  --dark-colour: #00204a;
+  --title-font: "Raleway", sans-serif;
+  --body-font: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--background-colour);
+  margin: 0;
+}

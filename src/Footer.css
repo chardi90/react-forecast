@@ -17,3 +17,10 @@ a:hover {
   color: #fdb44b;
   text-decoration: underline;
 }
+
+p {
+  color: var(--dark-colour);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+}
