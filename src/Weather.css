@@ -3,7 +3,7 @@
 }
 
 .Weather li {
-  border-bottom: 1px solid #00bbf0;
+  border-bottom: 1px solid var(--underline-colour);
   list-style: none;
   padding: 1px 0 1px 0;
 }
@@ -17,18 +17,10 @@
   display: flex;
 }
 
-.Weather .todays-content {
-  margin-top: 5px;
-}
-
 .Weather .todays-icon {
   position: relative;
   bottom: 3px;
   width: 100px;
-}
-
-.Weather .todays-emoji-icon {
-  font-size: 60px;
 }
 
 .Weather .todays-temp {
@@ -40,7 +32,7 @@
 }
 
 .Weather .data {
-  color: #fdb44b;
+  color: var(--accent-colour);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -52,7 +44,7 @@
 }
 
 .Weather .material-symbols-outlined {
-  color: #00bbf0;
+  color: var(--underline-colour);
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 18;
   font-size: 14px;
   position: relative;
@@ -67,7 +59,7 @@ div.location.box {
   margin-top: 5px;
 }
 
-ul .material-symbols-outlined {
+.Forecast .material-symbols-outlined {
   font-size: 18px;
 }
 

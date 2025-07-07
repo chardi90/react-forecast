@@ -1,7 +1,15 @@
 import React from "react";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ city, setCity }) {
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="Header">
       <div className="row d-flex">
@@ -14,13 +22,15 @@ export default function Header() {
           </button>
         </div>
         <div className="col-10 d-flex justify-content-end">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               type="search"
               name="search-input"
               placeholder="Enter a city..."
               className="search-input"
               autoFocus="on"
+              value={city}
+              onChange={updateCity}
             />
             <input type="submit" value="Search" className="search-button" />
           </form>
