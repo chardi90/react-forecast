@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -54,6 +55,20 @@ export default function Weather(props) {
     );
   } else {
     getWeather();
-    return "Loading...";
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100 loader">
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="#00bbf0"
+          strokeWidth="5"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+          wrapperStyle={{}}
+          wrapperClass="loader"
+        />
+      </div>
+    );
   }
 }

@@ -58,6 +58,10 @@
   top: 2px;
 }
 
+.Weather .loader svg {
+  color: var(--underline-colour);
+}
+
 div.location.box {
   background: #d6e4f0;
   padding-top: 5px;
