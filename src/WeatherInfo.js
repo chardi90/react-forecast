@@ -24,11 +24,11 @@ export default function WeatherInfo(props) {
         </div>
         <div className="row weather-info">
           <div className="todays-left-side todays-content col-sm-6">
-            <div className="row">
+            <div className="row d-flex justify-content-center ms-sm-1 ms-md-0">
               <div className="todays-icon col-6 col-md-4">
                 <img src={props.data.icon} alt="weather-icon" />
               </div>
-              <div className="todays-weather col-6 col-md-8">
+              <div className="todays-weather col-6 col-md-8 text-sm-center text-md-start">
                 <div className="temp">
                   <Temperature
                     celsius={props.data.temperature}

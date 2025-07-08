@@ -27,7 +27,8 @@
 .Weather .todays-icon {
   position: relative;
   bottom: 3px;
-  max-width: 110px;
+  max-width: 200px;
+  padding-top: 10px;
 }
 
 .Weather .todays-temp {
@@ -45,7 +46,7 @@
 
 .Weather .todays-right-side {
   text-align: left;
-  max-width: 70%;
+  max-width: 50%;
 }
 
 .Weather .material-symbols-outlined {
@@ -110,5 +111,19 @@ div.location.box {
   .weather-info {
     display: flex;
     justify-content: center;
+  }
+
+  .Weather .todays-icon {
+    max-width: 100px;
+  }
+
+  .Weather .todays-right-side {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 380px) {
+  .Weather .todays-icon {
+    max-width: 85px;
   }
 }
