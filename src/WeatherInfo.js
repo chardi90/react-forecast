@@ -1,6 +1,8 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
+import WindDegree from "./WindDegree";
+import Pressure from "./Pressure";
 
 export default function WeatherInfo(props) {
   return (
@@ -45,20 +47,6 @@ export default function WeatherInfo(props) {
           <div className="todays-right-side col-sm-6">
             <ul className="todays-stats">
               <li>
-                <span className="material-symbols-outlined">air</span> Wind
-                speed:
-                <span className="stat">
-                  <span className="data"> {props.data.wind} Km/h</span>
-                </span>
-              </li>
-              <li>
-                <span className="material-symbols-outlined">flag</span> Wind
-                from:
-                <span className="stat">
-                  <span className="data"> {props.data.direction}</span>
-                </span>
-              </li>
-              <li>
                 <span className="material-symbols-outlined">water_drop</span>{" "}
                 Humidity:
                 <span className="stat">
@@ -66,12 +54,14 @@ export default function WeatherInfo(props) {
                 </span>
               </li>
               <li>
-                <span className="material-symbols-outlined">thunderstorm</span>{" "}
-                Pressure:
+                <span className="material-symbols-outlined">air</span> Wind
+                speed:
                 <span className="stat">
-                  <span className="data"> {props.data.pressure}</span>
+                  <span className="data"> {props.data.wind} Km/h</span>
                 </span>
               </li>
+              <WindDegree degree={props.data.degree} />
+              <Pressure pressure={props.data.pressure} />
             </ul>
           </div>
         </div>
