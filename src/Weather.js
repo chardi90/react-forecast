@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
@@ -23,18 +23,18 @@ export default function Weather(props) {
     });
   }
 
-  function getWeather() {
+  const getWeather = useCallback(() => {
     const apiKey = `a2t477eebb3f98daaa0d6cf85ob51907`;
     const units = "metric";
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
     axios.get(apiUrl).then(handleResponse);
-  }
+  }, [city]);
 
   useEffect(() => {
     setWeatherData({ ready: false });
     getWeather();
-  }, [props.city, getWeather]);
+  }, [getWeather]);
 
   if (weatherData.ready) {
     return (
