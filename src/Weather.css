@@ -59,7 +59,7 @@
 }
 
 .Weather .loader svg {
-  color: var(--underline-colour);
+  color: var(--background-colour);
 }
 
 div.location.box {

@@ -61,12 +61,10 @@ export default function Weather(props) {
           visible={true}
           height="96"
           width="96"
-          color="#00bbf0"
+          color="#005792"
           strokeWidth="5"
           animationDuration="0.75"
           ariaLabel="rotating-lines-loading"
-          wrapperStyle={{}}
-          wrapperClass="loader"
         />
       </div>
     );
