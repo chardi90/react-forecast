@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -21,38 +22,27 @@ export default function WeatherInfo(props) {
             </h3>
           </div>
         </div>
-        <div className="split-text">
-          <div className="todays-left-side todays-content">
-            <div>
-              <img
-                src={props.data.icon}
-                alt="weather-icon"
-                className="todays-icon"
-              />
-            </div>
-            <div className="temp">
-              <span className="todays-temp stat data">
-                {Math.round(props.data.temperature)}
-              </span>
-              <span className="todays-temp-unit stat">°C</span>
-              <br />
-              <span className="p-0 m-0">
-                feels like
-                <span className="stat">
-                  <span className="data">
-                    {" "}
-                    {Math.round(props.data.feelslike)}
-                  </span>
-                  °C
-                </span>
-              </span>
-              <div className="p-0 m-0">
-                <span>{props.data.description}</span>
+        <div className="row">
+          <div className="todays-left-side todays-content col-sm-6">
+            <div className="row">
+              <div className="todays-icon col-4">
+                <img src={props.data.icon} alt="weather-icon" />
+              </div>
+              <div className="todays-weather col-8">
+                <div className="temp">
+                  <Temperature
+                    celsius={props.data.temperature}
+                    feelslike={props.data.feelslike}
+                    unit={props.unit}
+                  />
+                </div>
+                <div className="p-0 m-0">
+                  <span>{props.data.description}</span>
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="todays-right-side">
+          <div className="todays-right-side col-sm-6">
             <ul className="todays-stats">
               <li>
                 <span className="material-symbols-outlined">air</span> Wind

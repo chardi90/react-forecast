@@ -39,7 +39,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div>
-        <WeatherInfo data={weatherData} city={props.city} />
+        <WeatherInfo data={weatherData} city={props.city} unit={props.unit} />
         <div className="Forecast">
           <div className="box">
             <div className="divider-wrapper">

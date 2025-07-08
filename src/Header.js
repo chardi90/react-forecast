@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
+import ChangeUnit from "./ChangeUnit";
 
-export default function Header({ city, setCity }) {
+export default function Header({ city, setCity, unit, setUnit }) {
   const [inputValue, setInputValue] = useState(city);
 
   useEffect(() => {
@@ -20,13 +21,8 @@ export default function Header({ city, setCity }) {
   return (
     <div className="Header">
       <div className="row d-flex">
-        <div className="col-2 variables d-flex flex-column justify-content-start">
-          <button type="button" className="btn btn-units">
-            °F
-          </button>
-          <button type="button" className="btn btn-units mt-1">
-            M/h
-          </button>
+        <div className="col-2">
+          <ChangeUnit unit={unit} setUnit={setUnit} />
         </div>
         <div className="col-10 d-flex justify-content-end">
           <form onSubmit={handleSubmit}>

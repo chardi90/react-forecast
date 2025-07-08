@@ -13,14 +13,21 @@
   justify-content: space-between;
 }
 
-.Weather .todays-left-side {
-  display: flex;
+.Weather .todays-left-side,
+.todays-right-side {
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.Weather .todays-content {
+  margin: 0;
+  padding: 0;
 }
 
 .Weather .todays-icon {
   position: relative;
   bottom: 3px;
-  width: 100px;
+  max-width: 110px;
 }
 
 .Weather .todays-temp {
@@ -38,9 +45,7 @@
 
 .Weather .todays-right-side {
   text-align: left;
-}
-.Weather .todays-stats {
-  margin-right: 20px;
+  max-width: 50%;
 }
 
 .Weather .material-symbols-outlined {
@@ -85,10 +90,6 @@ div.location.box {
 
 .Forecast li .date {
   font-size: 12px;
-}
-
-.Forecast li .temp {
-  font-size: 16px;
 }
 
 .Forecast li .forecast-icon {
