@@ -34,7 +34,7 @@ export default function Weather(props) {
   useEffect(() => {
     setWeatherData({ ready: false });
     getWeather();
-  }, [props.city]);
+  }, [props.city, getWeather]);
 
   if (weatherData.ready) {
     return (
