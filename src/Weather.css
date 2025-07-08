@@ -45,7 +45,7 @@
 
 .Weather .todays-right-side {
   text-align: left;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 .Weather .material-symbols-outlined {
@@ -104,4 +104,11 @@ div.location.box {
 
 .Forecast li .temp-feels {
   font-size: 12px;
+}
+
+@media (max-width: 576px) {
+  .weather-info {
+    display: flex;
+    justify-content: center;
+  }
 }

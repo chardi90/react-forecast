@@ -55,3 +55,9 @@
   background: var(--accent-colour);
   color: var(--dark-colour);
 }
+
+@media (max-width: 576px) {
+  .Header .search-input {
+    max-width: 150px;
+  }
+}

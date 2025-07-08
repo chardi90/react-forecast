@@ -22,13 +22,13 @@ export default function WeatherInfo(props) {
             </h3>
           </div>
         </div>
-        <div className="row">
+        <div className="row weather-info">
           <div className="todays-left-side todays-content col-sm-6">
             <div className="row">
-              <div className="todays-icon col-4">
+              <div className="todays-icon col-6 col-md-4">
                 <img src={props.data.icon} alt="weather-icon" />
               </div>
-              <div className="todays-weather col-8">
+              <div className="todays-weather col-6 col-md-8">
                 <div className="temp">
                   <Temperature
                     celsius={props.data.temperature}
