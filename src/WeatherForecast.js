@@ -27,7 +27,11 @@ export default function WeatherForecast(props) {
     return (
       <div className="Forecast">
         {forecastData.slice(0, 5).map((dailyForecast, index) => (
-          <FormattedForecastDay key={index} data={dailyForecast} />
+          <FormattedForecastDay
+            key={index}
+            data={dailyForecast}
+            unit={props.unit}
+          />
         ))}
       </div>
     );

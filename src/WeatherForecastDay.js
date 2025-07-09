@@ -1,22 +1,31 @@
 import React from "react";
 
-export default function FormattedForecastDay(props) {
-  const maxTemperature = () => `${Math.round(props.data.temperature.maximum)}`;
-  const minTemperature = () => `${Math.round(props.data.temperature.minimum)}`;
+export default function FormattedForecastDay({ key, data, unit }) {
+  const convertToFahrenheit = (temp) => (temp * 9) / 5 + 32;
+
+  const maxTemp =
+    unit === "celsius"
+      ? Math.round(data.temperature.maximum)
+      : Math.round(convertToFahrenheit(data.temperature.maximum));
+
+  const minTemp =
+    unit === "celsius"
+      ? Math.round(data.temperature.minimum)
+      : Math.round(convertToFahrenheit(data.temperature.minimum));
 
   const day = () => {
-    const date = new Date(props.data.time * 1000);
+    const date = new Date(data.time * 1000);
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     return days[date.getDay()];
   };
 
   const formattedDate = () => {
-    const date = new Date(props.data.time * 1000);
+    const date = new Date(data.time * 1000);
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
     return `${day}/${month}`;
   };
-  console.log("Forecast Day Props:", props.data);
+  console.log("Forecast Day Props:", data);
 
   return (
     <ul>
@@ -29,36 +38,36 @@ export default function FormattedForecastDay(props) {
         <div className="col-2 temp">
           <div className="material-symbols-outlined">thermometer</div>
           <div className="stat data">
-            {maxTemperature()}°C{" "}
-            <span className="temp-feels">{minTemperature()}°C</span>
+            {maxTemp}°{unit === "celsius" ? "C" : "F"}{" "}
+            <span className="temp-feels">
+              {minTemp}°{unit === "celsius" ? "C" : "F"}
+            </span>
           </div>
         </div>
 
         <div className="col-2 forecast-icon">
           <img
-            src={props.data.condition.icon_url}
+            src={data.condition.icon_url}
             alt="weather-icon"
             className="forecast-icon"
           />
         </div>
 
         <div className="col-2 conditions">
-          <div className="description">{props.data.condition.description}</div>
+          <div className="description">{data.condition.description}</div>
         </div>
 
         <div className=" col-2 wind">
           <div className="material-symbols-outlined">air</div>
           <div className="stat data">
-            {props.data.wind.speed}
+            {data.wind.speed}
             <span>Km/h</span>
           </div>
         </div>
 
         <div className="col-2 humidity">
           <div className="material-symbols-outlined">water_drop</div>
-          <div className="humity stat data">
-            {props.data.temperature.humidity}%
-          </div>
+          <div className="humity stat data">{data.temperature.humidity}%</div>
         </div>
       </li>
     </ul>

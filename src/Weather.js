@@ -49,7 +49,7 @@ export default function Weather(props) {
                 <h3>5-day forecast</h3>
               </div>
             </div>
-            <WeatherForecast city={props.city} />
+            <WeatherForecast city={props.city} unit={props.unit} />
           </div>
         </div>
       </div>
