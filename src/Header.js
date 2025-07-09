@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import ChangeUnit from "./ChangeUnit";
+import ChangeUnit from "./HeaderChangeUnit";
 
 export default function Header({ city, setCity, unit, setUnit }) {
   const [inputValue, setInputValue] = useState(city);

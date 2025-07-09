@@ -1,55 +1,49 @@
-import React from "react";
-import FormattedForecastDate from "./WeatherForecastDate";
+import React, { useState, useEffect, useCallback } from "react";
 import FormattedForecastDay from "./WeatherForecastDay";
+import axios from "axios";
+import { RotatingLines } from "react-loader-spinner";
 
-export default function WeatherForecast() {
-  return (
-    <div className="Forecast">
-      <ul>
-        <li>
-          <span className="day-date">
-            {/* <span className="day" id="day-0">
-             {WeatherForecastDay(day.time)} 
-            </span> */}
-            <div className="date" id="date-0">
-              {/*{WeatherForecastDate(day.time)}*/}
-            </div>
-          </span>
+export default function WeatherForecast(props) {
+  const [forecastData, setForecastData] = useState(null);
 
-          <span className="temp">
-            <div className="material-symbols-outlined">thermometer</div>
-            <div className="stat data">
-              {/*{Math.round(day.temperature.maximum)}°C{" "}*/}
-              <span className="temp-feels">
-                {/*{Math.round(day.temperature.minimum)}°C*/}
-              </span>
-            </div>
-          </span>
+  function handleResponse(response) {
+    setForecastData(response.data.daily);
+  }
 
-          <span className="forecast-icon">
-            {/*<img
-              src=`${day.condition.icon_url}`
-              alt="weather-icon"
-              className="forecast-icon"
-            />*/}
-          </span>
+  const getForecast = useCallback(() => {
+    const apiKey = `a2t477eebb3f98daaa0d6cf85ob51907`;
+    const units = "metric";
+    const apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=${units}`;
 
-          <span className="conditions">
-            <div className="material-symbols-outlined"></div>
-            {/* <div className="description">{day.condition.description}</div>*/}
-          </span>
+    axios.get(apiUrl).then(handleResponse);
+  }, [props.city]);
 
-          <span className="wind">
-            <div className="material-symbols-outlined">air</div>
-            {/*<div className="stat data">{day.wind.speed}Km/h</div>*/}
-          </span>
+  useEffect(() => {
+    setForecastData(null);
+    getForecast();
+  }, [getForecast]);
 
-          <span className="humidity">
-            <div className="material-symbols-outlined">water_drop</div>
-            {/* <div className="humity stat data">{day.temperature.humidity}%</div>*/}
-          </span>
-        </li>
-      </ul>
-    </div>
-  );
+  if (forecastData) {
+    return (
+      <div className="Forecast">
+        {forecastData.slice(0, 5).map((dailyForecast, index) => (
+          <FormattedForecastDay key={index} data={dailyForecast} />
+        ))}
+      </div>
+    );
+  } else {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100 loader">
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="#005792"
+          strokeWidth="5"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+        />
+      </div>
+    );
+  }
 }
