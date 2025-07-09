@@ -21,7 +21,7 @@ export default function Header({ city, setCity, unit, setUnit }) {
   return (
     <div className="Header">
       <div className="row d-flex">
-        <div className="col-2">
+        <div className="col-2 d-flex align-items-center">
           <ChangeUnit unit={unit} setUnit={setUnit} />
         </div>
         <div className="col-10 d-flex justify-content-end">
