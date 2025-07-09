@@ -120,6 +120,14 @@ div.location.box {
   font-size: 18px;
 }
 
+.Forecast .day {
+  font-weight: bold;
+}
+
+.Forecast small {
+  font-size: x-small;
+}
+
 @media (max-width: 576px) {
   .weather-info {
     display: flex;

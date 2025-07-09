@@ -46,7 +46,7 @@ export default function Weather(props) {
           <div className="box">
             <div className="divider-wrapper">
               <div className="divider">
-                <h3>5-day forecast</h3>
+                <h3 className="text-center"> 5-day forecast</h3>
               </div>
             </div>
             <WeatherForecast city={props.city} unit={props.unit} />

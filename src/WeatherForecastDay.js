@@ -31,7 +31,7 @@ export default function FormattedForecastDay({ key, data, unit }) {
     <ul>
       <li className="row g-0 forecast-row">
         <div className="col-2 day-date">
-          {day()}
+          <div className="day">{day()}</div>
           <div className="date">{formattedDate()}</div>
         </div>
 
@@ -39,9 +39,9 @@ export default function FormattedForecastDay({ key, data, unit }) {
           <div className="material-symbols-outlined">thermometer</div>
           <div className="stat data">
             {maxTemp}°{unit === "celsius" ? "C" : "F"}{" "}
-            <span className="temp-feels">
+            <small className="temp-feels">
               {minTemp}°{unit === "celsius" ? "C" : "F"}
-            </span>
+            </small>
           </div>
         </div>
 
