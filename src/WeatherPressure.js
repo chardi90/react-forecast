@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Pressure({ pressure }) {
   function formattedPressure(pressure) {
-    if (pressure >= 1020) return `High (${pressure})`;
-    if (pressure >= 1000 && pressure < 1020) return `Normal (${pressure})`;
-    if (pressure >= 980 && pressure < 1000) return `Low (${pressure})`;
-    if (pressure >= 0 && pressure < 980) return `Very low (${pressure})`;
+    if (pressure >= 1020) return `High ${pressure}`;
+    if (pressure >= 1000 && pressure < 1020) return `Normal ${pressure}`;
+    if (pressure >= 980 && pressure < 1000) return `Low ${pressure}`;
+    if (pressure >= 0 && pressure < 980) return `Very low ${pressure}`;
   }
 
   return (

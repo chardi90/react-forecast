@@ -1,8 +1,8 @@
 import React from "react";
-import FormattedDate from "./FormattedDate";
-import Temperature from "./Temperature";
-import WindDegree from "./WindDegree";
-import Pressure from "./Pressure";
+import WeatherDate from "./WeatherDate";
+import Temperature from "./WeatherTemperature";
+import WindDegree from "./WeatherWindDegree";
+import Pressure from "./WeatherPressure";
 
 export default function WeatherInfo(props) {
   return (
@@ -20,7 +20,7 @@ export default function WeatherInfo(props) {
           <div className="split-text divider">
             <h3>Current weather</h3>
             <h3>
-              <FormattedDate date={props.data.date} />
+              <WeatherDate date={props.data.date} />
             </h3>
           </div>
         </div>
