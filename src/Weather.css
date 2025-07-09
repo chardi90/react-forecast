@@ -1,7 +1,19 @@
+.Weather ul,
+.Forecast ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Weather li,
+.Forecast li {
+  border-bottom: 1px solid var(--underline-colour);
+  list-style: none;
+}
+
 .material-symbols-outlined {
   color: var(--underline-colour);
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 18;
-  font-size: 14px;
 }
 
 .stat {
@@ -13,13 +25,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.Weather ul {
-  padding: 0;
-}
-
 .Weather li {
-  border-bottom: 1px solid var(--underline-colour);
-  list-style: none;
   padding: 1px 0px 1px 0;
 }
 
@@ -59,6 +65,7 @@
   position: relative;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   top: 2px;
+  font-size: 14px;
 }
 
 .Weather .loader svg {
@@ -66,7 +73,7 @@
 }
 
 div.location.box {
-  background: #d6e4f0;
+  background: var(--muted-background-colour);
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 5px;
@@ -74,47 +81,43 @@ div.location.box {
 
 .Forecast {
   padding-top: 10px;
-}
-
-.Forecast ul {
-  padding-left: 0;
+  padding-bottom: 10px;
 }
 
 .Forecast li {
-  display: flex;
-  justify-content: space-around;
   text-align: center;
   padding-top: 5px;
+  padding-right: 0;
 }
 
-.Forecast li .day-date {
-  padding-top: 5px;
+.Forecast li.row {
+  margin: 0 !important;
 }
 
-.Forecast li .day {
-  font-size: 16px;
+.Forecast li .forecast-icon {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.Forecast li .date {
-  font-size: 12px;
+.forecast-row .col-2 {
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.Forecast .temp .stat.data,
+.wind .stat.data,
+.humidity .stat.data,
+.conditions .description {
+  font-size: 0.9rem;
 }
 
 .Forecast .material-symbols-outlined {
   font-size: 18px;
-}
-
-.Forecast li .forecast-icon {
-  position: relative;
-  bottom: 3px;
-  width: 60px;
-}
-
-.Forecast li .conditions {
-  width: 20%;
-}
-
-.Forecast li .temp-feels {
-  font-size: 12px;
 }
 
 @media (max-width: 576px) {
@@ -129,6 +132,33 @@ div.location.box {
 
   .Weather .todays-right-side {
     max-width: 70%;
+  }
+
+  .Forecast .material-symbols-outlined {
+    font-size: 14px;
+  }
+
+  .forecast-row .col-2 {
+    font-size: 0.75rem;
+  }
+
+  .Forecast .temp .stat.data,
+  .wind .stat.data,
+  .humidity .stat.data,
+  .conditions .description {
+    font-size: 0.75rem;
+  }
+
+  .wind .stat.data span {
+    display: none;
+  }
+
+  .material-symbols-outlined {
+    font-size: 14px;
+  }
+
+  .Weather .todays-right-side {
+    font-size: 0.85rem;
   }
 }
 

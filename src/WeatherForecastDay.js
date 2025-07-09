@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function FormattedForecastDay(props) {
-  const maxTemperature = () => `${Math.round(props.data.temperature.maximum)}°`;
-  const minTemperature = () => `${Math.round(props.data.temperature.minimum)}°`;
+  const maxTemperature = () => `${Math.round(props.data.temperature.maximum)}`;
+  const minTemperature = () => `${Math.round(props.data.temperature.minimum)}`;
 
   const day = () => {
     const date = new Date(props.data.time * 1000);
@@ -20,44 +20,46 @@ export default function FormattedForecastDay(props) {
 
   return (
     <ul>
-      <li>
-        <span className="day-date">
+      <li className="row g-0 forecast-row">
+        <div className="col-2 day-date">
           {day()}
           <div className="date">{formattedDate()}</div>
-        </span>
+        </div>
 
-        <span className="temp">
+        <div className="col-2 temp">
           <div className="material-symbols-outlined">thermometer</div>
           <div className="stat data">
-            {minTemperature()}°C{" "}
-            <span className="temp-feels">{maxTemperature()}°C</span>
+            {maxTemperature()}°C{" "}
+            <span className="temp-feels">{minTemperature()}°C</span>
           </div>
-        </span>
+        </div>
 
-        <span className="forecast-icon">
+        <div className="col-2 forecast-icon">
           <img
             src={props.data.condition.icon_url}
             alt="weather-icon"
             className="forecast-icon"
           />
-        </span>
+        </div>
 
-        <span className="conditions">
-          <div className="material-symbols-outlined"></div>
+        <div className="col-2 conditions">
           <div className="description">{props.data.condition.description}</div>
-        </span>
+        </div>
 
-        <span className="wind">
+        <div className=" col-2 wind">
           <div className="material-symbols-outlined">air</div>
-          <div className="stat data">{props.data.wind.speed}Km/h</div>
-        </span>
+          <div className="stat data">
+            {props.data.wind.speed}
+            <span>Km/h</span>
+          </div>
+        </div>
 
-        <span className="humidity">
+        <div className="col-2 humidity">
           <div className="material-symbols-outlined">water_drop</div>
           <div className="humity stat data">
             {props.data.temperature.humidity}%
           </div>
-        </span>
+        </div>
       </li>
     </ul>
   );
