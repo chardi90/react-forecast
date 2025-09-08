@@ -1,8 +1,8 @@
-# Weather Forecast App
-A weather app with a city search function and a 5-day forecast, built in ReactJS using a weather API. Made responsive with a combination of CSS and bootstrap, then deployed on Netlify.
+# Responsive Weather Forecast App
+My improved design for a weather forecast app with a city search function and a 5-day forecast. Built in ReactJS using a weather API. Made responsive with a combination of CSS and bootstrap, then deployed on Netlify.
 
 ## Features  
-- Box section layout
+- Box section layout built in ReactJS
 - Detailed current weather section
 - Simplified 5-day forecast summary
 - Switch button between °C and °F
@@ -13,7 +13,7 @@ Clone the repository and install the required packages:
 
 ```bash  
 git clone https://github.com/chardi90/react-forecast.git  
-cd tasktracker  
+cd react-forecast  
 pip install -r requirements.txt 
 ``` 
 
